@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <title>🍺Ver2)Recommendation</title>
+    <style>
+        h1 { text-align: center; color: white;}
+        img {
+            display: block; margin: 0px auto;
+            width:40%;
+        }
+        select {
+        width: 200px;
+        padding: .8em .5em;
+        border: 1px solid #999;
+        font-family: inherit;
+        background: url('arrow.jpg') no-repeat 95% 50%;
+        border-radius: 0px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        }
+        input[type=text] {
+            width : 190px;
+            height : 30px;
+            font-size : 20px;
+        }
+        #user {
+        }
+        body{
+            background-image:url("{% static 'img/맥주배경.jpg' %}");
+            background-size:100% 200%;
+        }
+    </style>
+</head>
+<body>
+
+<div style="background-color:#0d47a1;">
+    <h1>좋아하는 맥주와 평점을 선택해주세요.</h1>
+</div>
+
+<div style="text-align:center;">
+    아이디 : <input type="text" name="name" text-align="center"><br><br>
+</div>
+
+<img src="static/img/Beer.jfif" alt="추천맥주">
+<div id="user">
+    <div style="text-align:center; margin:10px;">
+    <form method="POST">
+        {% csrf_token %}
+        <div style="float:left; margin:5px;">
+        맥주 :
+        <select name="beer1">
+            {% for tmp in beer_list %}
+                <option value='{{tmp}}'>{{tmp}}</option>
+            {% endfor %}
+        </select><br>
+        평점 :
+        <select name="rating1">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3 selected>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select><br><br>
+        </div>
+
+        <div style="float:left; margin:5px;">
+        맥주 :
+        <select name="beer2">
+            {% for tmp in beer_list %}
+                <option value='{{tmp}}'>{{tmp}}</option>
+            {% endfor %}
+        </select><br>
+        평점 :
+        <select name="rating2">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3 selected>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select><br><br>
+        </div>
+
+        <div style="float:left; margin:5px;">
+        맥주 :
+        <select name="beer3">
+            {% for tmp in beer_list %}
+                <option value='{{tmp}}'>{{tmp}}</option>
+            {% endfor %}
+        </select><br>
+        평점 :
+        <select name="rating3">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3 selected>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select><br><br>
+        </div>
+
+        <div style="float:left; margin:5px;">
+        맥주 :
+        <select name="beer4">
+            {% for tmp in beer_list %}
+                <option value='{{tmp}}'>{{tmp}}</option>
+            {% endfor %}
+        </select><br>
+        평점 :
+        <select name="rating4">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3 selected>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select><br><br>
+        </div>
+
+        <div style="float:left; margin:5px;">
+        맥주 :
+        <select name="beer5">
+            {% for tmp in beer_list %}
+                <option value='{{tmp}}'>{{tmp}}</option>
+            {% endfor %}
+        </select><br>
+        평점 :
+        <select name="rating5">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3 selected>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select>
+        </div>
+            <br><br><br>
+        <input class="btn btn-success" type="submit" value="Pick!">
+    </form>
+    </div>
+</div>
+</div>
+</body>
+</html>

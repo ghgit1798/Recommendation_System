@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <title>🍺Ver1)Recommendation</title>
+    <style>
+        h1 { text-align: center; color: white;}
+        img {
+            display: block; margin: 0px auto;
+            width:40%;
+        }
+        select {
+            width: 200px;
+            padding: .5em .5em;
+            border: 1px solid #999;
+            font-family: inherit;
+            background: url('arrow.jpg') no-repeat 95% 50%;
+            border-radius: 0px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        input[type=text] {
+            width : 190px;
+            height : 30px;
+            font-size : 20px;
+        }
+        body{
+            background-image:url("{% static 'img/맥주배경.jpg' %}");
+            background-size:100% 200%;
+        }
+    </style>
+</head>
+<body>
+<div style="background-color:#0d47a1;">
+    <h1>좋아하는 맥주와 중요시 하는 취향을 선택해주세요.</h1>
+</div>
+    <div id = 'contents' style="text-align:center;">
+        <img id="img1" src="static/img/Beer.jfif">
+        <div>
+            <form method="POST">
+                <br>
+                {% csrf_token %}
+                아이디 :
+                <input type="text" name="name"><br><br>
+
+                맥주 :
+                <select name="beer">
+                    {% for tmp in beer_list %}
+                        <option value='{{tmp}}'>{{tmp}}</option>
+                    {% endfor %}
+                </select><br><br>
+                취향 :
+                <select name="detail">
+                    <option value="Flavor">맛</option>
+                    <option value="Aroma">향</option>
+                    <option value="Mouthfeel">목넘김</option>
+                </select><br><br>
+                <input class="btn btn-success" type="submit" value="Pick!">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
