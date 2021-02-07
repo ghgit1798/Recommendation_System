@@ -120,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_DIR = os.path.dirname(BASE_DIR)
+STATIC_DIR = os.path.dirname(BASE_DIR, 'beer/static')
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
