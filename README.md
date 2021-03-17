@@ -4,7 +4,11 @@
 ## 웹 배포하기
 PythonAnywhere <br>
 
+자세한 배포 과정 <br>
 https://western-sky.tistory.com/61?category=847883
+
+배포 주소 <br>
+http://ghgoo1798.pythonanywhere.com/
 
 ## 구현 결과
 ![image](https://user-images.githubusercontent.com/44918665/111407631-5e3d3800-8717-11eb-9eff-c6fc3b8dd977.png)
