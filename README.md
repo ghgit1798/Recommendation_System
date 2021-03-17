@@ -2,7 +2,8 @@
 🍺 맥주 추천시스템 구현 및 배포 - Django & PythonAnywhere
 
 ## 웹 배포하기
-PythonAnywhere
+PythonAnywhere <br>
+
 https://western-sky.tistory.com/61?category=847883
 
 ## 구현 결과
